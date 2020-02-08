@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Tile
 {
-    public enum TileType { Empty, Grass };
+    public enum TileType { Empty, Moon };
 
     TileType type = TileType.Empty;
 

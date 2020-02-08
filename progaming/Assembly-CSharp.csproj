@@ -45,7 +45,9 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Controllers\CameraController.cs" />
      <Compile Include="Assets\Controllers\MouseController.cs" />
+     <Compile Include="Assets\Controllers\PlayerMovement.cs" />
      <Compile Include="Assets\Controllers\WorldController.cs" />
      <Compile Include="Assets\Models\InstalledObject.cs" />
      <Compile Include="Assets\Models\LooseObject.cs" />

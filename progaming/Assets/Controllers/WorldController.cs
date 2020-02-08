@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WorldController : MonoBehaviour
 {
-    public Sprite grassSprite;
+    public Sprite moonSprite;
 
     World world;
 
@@ -47,8 +47,8 @@ public class WorldController : MonoBehaviour
     {
         switch (tile_data.Type)
         {
-            case Tile.TileType.Grass:
-                tile_go.GetComponent<SpriteRenderer>().sprite = grassSprite;
+            case Tile.TileType.Moon:
+                tile_go.GetComponent<SpriteRenderer>().sprite = moonSprite;
                 break;
             case Tile.TileType.Empty:
                 tile_go.GetComponent<SpriteRenderer>().sprite = null;
