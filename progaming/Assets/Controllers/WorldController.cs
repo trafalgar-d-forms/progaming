@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WorldController : MonoBehaviour
 {
-    public Sprite moonSprite;
+    public Sprite grassSprite;
 
     World world;
 
@@ -12,7 +12,7 @@ public class WorldController : MonoBehaviour
     void Start()
     {
         // Creat a world with Empty tiles
-        world = new World();
+        world = new World(300, 300);
 
         // Create a GameObject for each of our tiles, so they show visually
         for (int x = 0; x < world.Width; x++)
@@ -23,7 +23,7 @@ public class WorldController : MonoBehaviour
 
                 GameObject tile_go = new GameObject();
                 tile_go.name = "Tile_" + x + "_" + y;
-                tile_go.transform.position = new Vector3(tile_data.X, tile_data.Y, 0);
+                tile_go.transform.position = new Vector3(tile_data.X-world.Width/2, tile_data.Y-world.Height/2, 0);
                 tile_go.transform.SetParent(this.transform, true);
 
                 // Add a sprite renderer, but don't bother setting a sprite
@@ -47,8 +47,8 @@ public class WorldController : MonoBehaviour
     {
         switch (tile_data.Type)
         {
-            case Tile.TileType.Moon:
-                tile_go.GetComponent<SpriteRenderer>().sprite = moonSprite;
+            case Tile.TileType.Grass:
+                tile_go.GetComponent<SpriteRenderer>().sprite = grassSprite;
                 break;
             case Tile.TileType.Empty:
                 tile_go.GetComponent<SpriteRenderer>().sprite = null;

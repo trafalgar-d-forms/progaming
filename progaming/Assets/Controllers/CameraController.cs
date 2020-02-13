@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CameraController : MonoBehaviour
 {
@@ -10,14 +11,14 @@ public class CameraController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        isFollowing = true;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        const int orthographicSizeMin = 1;
-        const int orthographicSizeMax = 6;
+        const int orthographicSizeMin = 2;
+        const int orthographicSizeMax = 8;
 
         if (Input.GetAxis("Mouse ScrollWheel") < 0)
         {
@@ -28,6 +29,9 @@ public class CameraController : MonoBehaviour
             Camera.main.orthographicSize--;
         }
         Camera.main.orthographicSize = Mathf.Clamp(Camera.main.orthographicSize, orthographicSizeMin, orthographicSizeMax);
-        this.transform.position = new Vector3(player.transform.position.x, player.transform.position.y, -10);
+        if (isFollowing)
+        {
+            this.transform.position = new Vector3(player.transform.position.x, player.transform.position.y, -10);
+        }
     }
 }

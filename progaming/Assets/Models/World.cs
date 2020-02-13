@@ -52,7 +52,7 @@ public class World
                 }
                 else
                 {
-                    tiles[x,y].Type = Tile.TileType.Moon;
+                    tiles[x,y].Type = Tile.TileType.Grass;
                 }
             }
         }
